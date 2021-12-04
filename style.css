@@ -73,3 +73,7 @@ form, .content {
 	border: 1px solid #3c763d;
 	margin-bottom: 20px;
 }
+
+#map { 
+	height:100vh; 
+}
