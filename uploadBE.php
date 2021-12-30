@@ -16,9 +16,8 @@
 			if (mysqli_query($db, $sql)) {
 				echo "New record created successfully";
 			} else {
-				echo "Error: " . $sql . "<br>" . mysqli_error($db);
+				echo "Error: " . $sql . mysqli_error($db);
 			}
-
 		}
 
 		$sql = "INSERT INTO stores (id, Name, Address,Rating,Rating_number,lat,lng,types) VALUES ('".$row['id']."', '".$row['name']."', '".$row['address']."', '".$row['rating']."', '".$row['rating_n']."','".$row['lat']."','".$row['lng']."','".$row['types']."')";
@@ -26,7 +25,7 @@
 		if (mysqli_query($db, $sql)) {
 			echo "New record created successfully";
 		} else {
-			echo "Error: " . $sql . "<br>" . mysqli_error($db);
+			echo "Error: " . $sql . mysqli_error($db);
 		}
-
 	}
+?>
