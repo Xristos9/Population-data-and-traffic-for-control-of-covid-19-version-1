@@ -32,22 +32,22 @@
 
 	var date = new Date();
 	var day = date.toLocaleString('en-us', { weekday: 'long'})
-	
+
 	const Icon1 = L.icon({
 		iconUrl: 'icons/icon1.png',
 		iconSize: [38, 38],
 		iconAnchor: [20, 0]
 	});
-	
+
 	const Icon2 = L.icon({
 		iconUrl: 'icons/icon2.png',
-		iconSize: [38, 35],
+		iconSize: [38, 38],
 		iconAnchor: [20, 0]
 	});
 
 	const Icon3 = L.icon({
 		iconUrl: 'icons/icon3.png',
-		iconSize: [38, 35],
+		iconSize: [38, 38],
 		iconAnchor: [20, 0]
 	});
 
@@ -128,7 +128,7 @@
 					}
 				}
 				console.log(arr1)
-				
+
 				num = calc(arr1[0].popular_times)
 				console.log(num)
 				if (num >= 0 && num <= 32) {
@@ -140,11 +140,11 @@
 				} else {
 					var marker = L.marker(L.latLng(arr1[0].loc[0], arr1[0].loc[1]), {id:data[i].id}).addTo(map)
 				}
-				
+
 				marker.bindPopup("Name: '" + arr1[0].name + "'<br> Address: " + arr1[0].address + "<br>Traffic: " + Math.round(calc(arr1[0].popular_times)));
 				map.setView([arr1[0].loc[0], arr1[0].loc[1]], 20);
 			}
-			
+
 			function calc(arr){
 				let nextTwoHours = [];
 				nextTwoHours.push(parseInt(arr[date.getHours()]), parseInt(arr[date.getHours() + 1]), parseInt(arr[date.getHours() + 2]));
