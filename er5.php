@@ -71,7 +71,7 @@
 			c.setDate(c.getDate()+14);
 			if(de_date> cu_date){
 				alert('Please dont select future dates')
-			} else if(de_date<c && de_date>a){
+			} else if(de_date<c && de_date>=a){
 				alert('Please wait 14 days before you can declare again')
 			} else if(de_date<a){
 				alert('You have to choose a date thats after your last declaration')
