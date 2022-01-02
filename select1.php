@@ -15,7 +15,6 @@ if (mysqli_num_rows($query3) > 0) {
 	}
 }
 
-// 
 $array2 = array();
 for($i=0; $i<count($array1); $i++){
 	$u = $array1[$i]['id'];
@@ -32,7 +31,6 @@ for($i=0; $i<count($array1); $i++){
 // print_r($array2);
 $unique = count(array_unique($array2));
 // print_r($unique);
-
 
 array_push($array, $query,$query2,$unique);
 echo json_encode($array,true);
