@@ -16,7 +16,7 @@
 	<title>Map</title>
 </head>
 <body>
-	<?php include "header.php"; ?>
+	<?php include "adminHeader.php"; ?>
 	<div id="map"></div>
 	<?php include "footer.php";?>
 	<script src = "visit.js"></script>

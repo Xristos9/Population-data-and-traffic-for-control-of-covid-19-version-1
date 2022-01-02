@@ -25,20 +25,26 @@ if(isset($_SESSION['userID']) && isset($_SESSION['username'])){
 		if(mysqli_num_rows($result) === 1){
 
 			$result2 = mysqli_query($db,"UPDATE users SET password='$np' WHERE userID='$id'");
-			echo 0;
+			if($_SESSION['isAdmin']){
+				echo 1;
+				exit();
+			} else{
+				echo 0;
+				exit();
+			}
 
 		} else{
-			echo 1;
+			echo 2;
 			exit();
 		}
 
 
 	} else {
-		echo 2;
+		echo 3;
 		exit();
 		}
 
 } else{
-	echo 2;
+	echo 3;
 	exit();
 }

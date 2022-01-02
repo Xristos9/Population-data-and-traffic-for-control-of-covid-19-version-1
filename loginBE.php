@@ -22,7 +22,7 @@ $pass = validate($_POST['password']);
 			$_SESSION['username'] = $row['username'];
 			$_SESSION['email'] = $row['email'];
 			$_SESSION['userID'] = $row['userID'];
-			$_SESSION['idAdmin'] = $row['isAdmin'];
+			$_SESSION['isAdmin'] = $row['isAdmin'];
 
 			if($row['isAdmin']){
 				echo 1;

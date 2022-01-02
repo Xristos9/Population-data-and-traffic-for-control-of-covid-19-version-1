@@ -35,13 +35,9 @@ if(isset($_SESSION['userID']) && isset($_SESSION['username'])){
 			<td><input type="text" placeholder="New Username" id="t2" class="tb" /></td>
 			</tr>
 			<tr>
-			<td align="right">Confirm New Username:</td>
-			<td><input type="text" placeholder="Confirm New Username" id="t3" class="tb" /></td>
-			</tr>
-			<tr>
 			<td></td>
 			<td>
-            <a href="user_set.php" class="ca">Back</a>
+            <!-- <a href="user_set.php" class="ca">Back</a> -->
 			<button class="uBt" onclick="changeU()" >Change</button>
 			</td>
 			</tr>

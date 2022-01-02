@@ -30,6 +30,9 @@
 		<br>
 		<br>
 		<button class="uBt" id="up">Upload to server</button>
+		<br>
+		<br>
+		<button class="uBt2" id="delete" onclick="onDelete()">Delete everything</button>
 	</div>
 	<?php include "footer.php";?>
 </body>

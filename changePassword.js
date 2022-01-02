@@ -56,10 +56,12 @@ function changeP(){
 		if(res == 0){
 			alert('Your password has been updated successfully')
 			window.location.assign("user_set.php")
-		} else if(res == 1){
-			alert('Incorrect password')
-			window.location.assign("user_set.php")
+		}else if(res == 1){
+			alert('Your password has been updated successfully')
+			window.location.assign("adminUserSet.php") 
 		}else if(res == 2){
+			alert('Incorrect password')
+		}else if(res == 3){
 			alert('An unexpected error has been occurred')
 			window.location.assign("index.html")
 		}

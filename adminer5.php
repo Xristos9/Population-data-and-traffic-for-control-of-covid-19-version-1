@@ -11,7 +11,7 @@
 	<title>er5</title>
 </head>
 <body>
-<?php include "header.php"; ?>
+<?php include "adminHeader.php"; ?>
 
 <br/><br/>
 	<div class="page-wrapper">

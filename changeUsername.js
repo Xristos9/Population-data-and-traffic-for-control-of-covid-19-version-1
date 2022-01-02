@@ -1,19 +1,15 @@
 function changeU(){
 	const oldName= document.getElementById("t1").value;
 	const newName= document.getElementById("t2").value;
-	const cName= document.getElementById("t3").value;
 
-	const pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
 
 
 	if(oldName==''){
 		alert('Please enter your Old Username');
 	}else if(newName==''){
 		alert('Please enter the new Username');
-	}else if(cName==''){
-		alert('Please Confirm Username');
-	}else if(newName != cName){
-		alert ('Usernames do not Matched');
+	}else if(newName == oldName){
+		alert ('Usernames should not match');
 	}else{
 
 		const upload = $.ajax({
@@ -51,9 +47,11 @@ function changeU(){
 			alert('Your Username has been updated successfully')
 			window.location.assign("user_set.php")
 		} else if(res == 1){
-			alert('Incorrect Username')
-			window.location.assign("user_set.php")
+			alert('Your Username has been updated successfully')
+			window.location.assign("adminUserSet.php")
 		}else if(res == 2){
+			alert('Incorrect Username')
+		}else{
 			alert('An unexpected error has been occurred')
 			window.location.assign("index.html")
 		}

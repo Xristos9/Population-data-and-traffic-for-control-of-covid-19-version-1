@@ -11,10 +11,10 @@
 	<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Sympols -->
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Search</title>
+	<title>Admin Search</title>
 </head>
 <body>
-	<?php include "header.php"; ?>
+	<?php include "adminHeader.php"; ?>
 	<br>
 	<div class="ui-widget"  style="text-align:left;">
 	<input id="autocomplete" placeholder="Search for: Store"></div>

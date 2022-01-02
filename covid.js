@@ -1,4 +1,3 @@
-var counter= 1;
 var completelist= document.getElementById("thelist");
 window.onload = function() {
 

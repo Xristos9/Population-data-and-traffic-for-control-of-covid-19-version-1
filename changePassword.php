@@ -42,7 +42,7 @@ session_start();
 			<tr>
 			<td></td>
 			<td>
-			<a href="user_set.php" class="ca">Back</a>
+			<!-- <a href="user_set.php" class="ca">Back</a> -->
 			<button class="uBt" onclick="changeP()" >Change</button>
 			</td>
 			</tr>
