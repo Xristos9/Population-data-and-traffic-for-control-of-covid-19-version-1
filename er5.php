@@ -31,7 +31,6 @@
 <script>
 
 	const cu_date = new Date();
-	const client_id = 214
 
 	function onSubmit(){
 		const de_date = new Date(document.getElementById('covid').value)
@@ -65,17 +64,9 @@
 		ajax.done(leadros)
 
 		function leadros(res){
-			// console.log(de_date)
+			// console.log(res[0])
 
-
-			var array = []
-			for(var i in res){
-				if(res[i].id == client_id){
-					array.push(res[i].date)
-				}
-			}
-			// console.log(array[0])
-			a = new Date(array[0])
+			a = new Date(res[0])
 			var c = new Date(a.getTime());
 			c.setDate(c.getDate()+14);
 			if(de_date> cu_date){
