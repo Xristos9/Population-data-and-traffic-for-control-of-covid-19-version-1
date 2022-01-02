@@ -11,11 +11,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/3.0.2/leaflet-search.src.js" integrity="sha512-V+GL/y/SDxveIQvxnw71JKEPqV2N+RYrUlf6os3Ru31Yhnv2giUsPadRuFtgmIipiXFBc+nCGMHPUJQc6uxxOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/3.0.2/leaflet-search.min.css" integrity="sha512-qI2MrOLvDIUkOYlIJTFwZbDQYEcuxaS8Dr4v+RIFz1LHL1KJEOKuO9UKpBBbKxfKzrnw9UB5WrGpdXQi0aAvSw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Sympols -->
 				
 	<title>Map</title>
 </head>
 <body>
+	<?php include "header.php"; ?>	
 	<div id="map"></div>
+	<?php include "footer.php";?>
 <script>
 window.onload = function() {
 
