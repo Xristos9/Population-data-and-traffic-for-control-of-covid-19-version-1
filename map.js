@@ -1,20 +1,26 @@
 var date = new Date();
 	var day = date.toLocaleString('en-us', { weekday: 'long'})
 
-	const Icon1 = L.icon({
-		iconUrl: 'icons/icon1.png',
+	const green = L.icon({
+		iconUrl: 'icons/green.png',
 		iconSize: [38, 38],
 		iconAnchor: [20, 0]
 	});
 
-	const Icon2 = L.icon({
-		iconUrl: 'icons/icon2.png',
+	const orange = L.icon({
+		iconUrl: 'icons/orange.png',
 		iconSize: [38, 38],
 		iconAnchor: [20, 0]
 	});
 
-	const Icon3 = L.icon({
-		iconUrl: 'icons/icon3.png',
+	const red = L.icon({
+		iconUrl: 'icons/red.png',
+		iconSize: [38, 38],
+		iconAnchor: [20, 0]
+	});
+
+	const blue = L.icon({
+		iconUrl: 'icons/blue.png',
 		iconSize: [38, 38],
 		iconAnchor: [20, 0]
 	});
@@ -100,13 +106,13 @@ var date = new Date();
 				num = calc(arr1[0].popular_times)
 				console.log(num)
 				if (num >= 0 && num <= 32) {
-					var marker = L.marker(L.latLng(arr1[0].loc[0], arr1[0].loc[1]), {icon: Icon1}, {id:arr1[0].id}).addTo(map)
+					var marker = L.marker(L.latLng(arr1[0].loc[0], arr1[0].loc[1]), {icon: green}, {id:arr1[0].id}).addTo(map)
 				} else if (num >= 33 && num <= 65) {
-					var marker = L.marker(L.latLng(arr1[0].loc[0], arr1[0].loc[1]), {icon: Icon2}, {id:arr1[0].id}).addTo(map)
+					var marker = L.marker(L.latLng(arr1[0].loc[0], arr1[0].loc[1]), {icon: orange}, {id:arr1[0].id}).addTo(map)
 				} else if (num >= 66) {
-					var marker = L.marker(L.latLng(arr1[0].loc[0], arr1[0].loc[1]), {icon: Icon3}, {id:arr1[0].id}).addTo(map)
+					var marker = L.marker(L.latLng(arr1[0].loc[0], arr1[0].loc[1]), {icon: red}, {id:arr1[0].id}).addTo(map)
 				} else {
-					var marker = L.marker(L.latLng(arr1[0].loc[0], arr1[0].loc[1]), {id:data[i].id}).addTo(map)
+					var marker = L.marker(L.latLng(arr1[0].loc[0], arr1[0].loc[1]), {icon: blue}, {id:data[i].id}).addTo(map)
 				}
 
 				marker.bindPopup("Name: '" + arr1[0].name + "'<br> Address: " + arr1[0].address + "<br>Traffic: " + Math.round(calc(arr1[0].popular_times)));

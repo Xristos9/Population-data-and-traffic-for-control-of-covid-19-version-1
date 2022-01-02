@@ -6,7 +6,7 @@ window.onload = function() {
 	})
 	var map = new L.Map('map', {
 		center: new L.LatLng(38.246361, 21.734966),
-		zoom: 4,
+		zoom: 15,
 		layers: [baseLayer]
 	})
 	var stores = new L.layerGroup();
@@ -39,15 +39,15 @@ window.onload = function() {
 		// console.log(position);
 		var ClLock = L.marker([position.coords.latitude, position.coords.longitude]);
 		ClLock.bindPopup("lat: " + position.coords.latitude + "<br>lng: " + position.coords.longitude);
-		ClLock.addTo(map);
-		map.setView([position.coords.latitude, position.coords.longitude], 8)
+		stores.addLayer(ClLock);
+		// map.setView([position.coords.latitude, position.coords.longitude], 8)
 
 		const ajax =  $.ajax({
-			url: 'mapBE.php',
+			url: 'visitSelect.php',
 			method: 'GET',
 			dataType: 'json',
 			success: function(data){
-				// console.log(data)
+				console.log(data)
 			},error: function (xhr, exception) {
 				var msg = "";
 				if (xhr.status === 0) {
@@ -69,13 +69,13 @@ window.onload = function() {
 			}
 		})
 
-		ajax.done(leadros)
+		ajax.done(leandros)
 
-		function leadros(res){
-			for (var i in res) {
-				if (getDistance(position.coords.latitude, position.coords.longitude, res[i].loc[0], res[i].loc[1]) <= 200000) {
+		function leandros(res){
+			for (let i = 0; i < res.length; i++) {
+				if (getDistance(position.coords.latitude, position.coords.longitude, res[i].lat, res[i].lng) <= 200000) {
 
-					marker = L.marker([res[i].loc[0], res[i].loc[1]]);
+					marker = L.marker([res[i].lat, res[i].lng]);
 
 					var container = $('<div />');
 					container.html(`<p for="name">Name: ${res[i].name}</p>
@@ -101,15 +101,16 @@ window.onload = function() {
 
 	function user_confirm(res, i, num) {
 		if (confirm(`Do you want to upload your visit to ${res[i].name} with ${parseInt(num)} people?`)) {
+
 			var text = {};
-			text.lat = res[i].loc[0];
-			text.lng = res[i].loc[1];
+			text.lat = res[i].lat;
+			text.lng = res[i].lng;
 			text.name = res[i].name;
 			text.address = res[i].address;
-			text.id = res[i].Id;
+			text.id = res[i].id;
 			text.estimate = parseInt(num);
-
-			const upload = $.ajax({
+			console.log(text)
+			$.ajax({
 				url: 'visitBE.php',
 				method: 'POST',
 				data: {
@@ -164,5 +165,4 @@ window.onload = function() {
 	function deg2rad(deg) {
 		return deg * (Math.PI / 180)
 	}
-
 }

@@ -10,11 +10,11 @@
 	$name = $k['name'];
 	$address = $k['address'];
 	$id = $k['id'];
-	$estimation = $k['estimate'];
+	$estimate = $k['estimate'];
 
-	print_r($k);
+	// print_r($k);
 
-	$sql = "INSERT INTO `user_visits`(`User_id`, `id_store`, `Address`, `Name`, `lat`, `lng`, `estimation`) VALUES ('$u','$id','$address','$name','$lat','$lng','$estimation')";
+	$sql = "INSERT INTO `user_visits`(`User_id`, `id_store`, `Address`, `Name`, `lat`, `lng`, `estimation`) VALUES ('$u','$id','$address','$name','$lat','$lng','$estimate')";
 
 	if (mysqli_query($db, $sql)) {
 		echo "New record created successfully";
