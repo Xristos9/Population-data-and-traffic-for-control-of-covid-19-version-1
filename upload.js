@@ -36,8 +36,8 @@ function readFile(input) {
 				url: "uploadBE.php",
 				type: "POST",
 				data: {kati:JSON.stringify(E)},
-				success: function(res) {
-					console.log(res)
+				success: function(data) {
+					console.log(data)
 				},error: function (xhr, exception) {
 					var msg = "";
 					if (xhr.status === 0) {
