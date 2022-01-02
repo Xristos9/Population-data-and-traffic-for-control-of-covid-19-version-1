@@ -17,7 +17,7 @@
 		<br/><br/>
 		<ul id="thelist">
 			</ul>
-			
+
 		</div>
 		<script type="text/javascript" src="covid.js"></script>
 	<?php include "footer.php";?>

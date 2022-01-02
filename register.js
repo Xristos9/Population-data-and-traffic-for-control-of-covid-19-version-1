@@ -29,7 +29,7 @@ function registration(){
 	}else if(document.getElementById("t4").value.length > 20){
 		alert ('Password max length is 20');
 	}else{
-		
+
 		const upload = $.ajax({
 			url: 'registerBE.php',
 			method: 'POST',

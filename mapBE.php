@@ -10,9 +10,6 @@ $array = array();
 			array_push($array, array('Id'=>$row['id'], 'loc' => [$row['lat'], $row['lng']], 'name'=>$row['Name'], 'address'=>$row['Address'],'popular_times'=>[$row['data_0'],$row['data_1'],$row['data_2'],$row['data_3'],$row['data_4'],$row['data_5'],$row['data_6'],$row['data_7'],$row['data_8'],$row['data_9'],$row['data_10'],$row['data_11'],$row['data_12'],$row['data_13'],$row['data_14'],$row['data_15'],$row['data_16'],$row['data_17'],$row['data_18'],$row['data_19'],$row['data_20'],$row['data_21'],$row['data_22'],$row['data_23']],'day'=>$row['day']));
 		}
 	}
-	
+
 	// print_r($array);
 	echo json_encode($array,true);
-	// print_r($sent);
-
-?>

@@ -61,8 +61,6 @@ function readFile(input) {
 		})
 	}
 
-	
-
 	file.onerror = function() {
 		console.log(reader.error);
 	};

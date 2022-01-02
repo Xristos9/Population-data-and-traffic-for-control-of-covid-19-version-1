@@ -66,7 +66,7 @@
 
 		function leadros(res){
 			// console.log(de_date)
-			
+
 
 			var array = []
 			for(var i in res){

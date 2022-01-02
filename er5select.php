@@ -12,6 +12,3 @@ if (mysqli_num_rows($query) > 0) {
 }
 // print_r($array);
 echo json_encode($array,true);
-
-// $k = $_POST["key"];
-// print_r($k);

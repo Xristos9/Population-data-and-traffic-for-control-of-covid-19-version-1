@@ -33,13 +33,11 @@ $pass = validate($_POST['password']);
 			}
 
 		}else{
-			// header("Location: index.php?error=Incorrect username or password.");
 			echo 2;
 			exit();
 		}
 
 	} else{
-		// header("Location: index.php?error=Incorrect username or password.");
 		echo 3;
 		exit();
 	}

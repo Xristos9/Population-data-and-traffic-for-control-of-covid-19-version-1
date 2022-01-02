@@ -21,13 +21,13 @@
 <body>
 	<?php include "header.php"; ?>
 
-
 	<div class="page-wrapper">
 	<!-- logged in user information -->
 		<?php if (isset($_SESSION['username'])) : ?>
 			<h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
 		<?php endif ?>
 	</div>
+	
 	<?php include "footer.php";?>
 </body>
 </html>

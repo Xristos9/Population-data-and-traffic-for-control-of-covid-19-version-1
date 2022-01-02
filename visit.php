@@ -12,11 +12,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/3.0.2/leaflet-search.src.js" integrity="sha512-V+GL/y/SDxveIQvxnw71JKEPqV2N+RYrUlf6os3Ru31Yhnv2giUsPadRuFtgmIipiXFBc+nCGMHPUJQc6uxxOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/3.0.2/leaflet-search.min.css" integrity="sha512-qI2MrOLvDIUkOYlIJTFwZbDQYEcuxaS8Dr4v+RIFz1LHL1KJEOKuO9UKpBBbKxfKzrnw9UB5WrGpdXQi0aAvSw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Sympols -->
-				
+
 	<title>Map</title>
 </head>
 <body>
-	<?php include "header.php"; ?>	
+	<?php include "header.php"; ?>
 	<div id="map"></div>
 	<?php include "footer.php";?>
 <script>
@@ -35,7 +35,7 @@ window.onload = function() {
 	map.addLayer(stores);
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition, showError)
-	} else { 
+	} else {
 		alert("Geolocation is not supported by this browser.")
 	}
 
@@ -90,28 +90,28 @@ window.onload = function() {
 				console.log(msg)
 			}
 		})
-		
+
 		ajax.done(leadros)
-	
+
 		function leadros(res){
 			for (var i in res) {
 				if (getDistance(position.coords.latitude, position.coords.longitude, res[i].loc[0], res[i].loc[1]) <= 200000) {
-	
+
 					marker = L.marker([res[i].loc[0], res[i].loc[1]]);
-	
+
 					var container = $('<div />');
 					container.html(`<p for="name">Name: ${res[i].name}</p>
 					<p for="address">Address: ${res[i].address}</p>
 					<label>How many people were at the store:</label>
 					<input id="people" type="number" min="0"/>
 					<button class="submit">Upload</button>`);
-	
+
 					container.on('click', '.submit', function(){
 						people = $('#people').val();
 						console.log(res[i])
 						user_confirm(res, i, people);
 					});
-	
+
 					marker.bindPopup(container[0]);
 					stores.addLayer(marker);
 				}
@@ -120,7 +120,7 @@ window.onload = function() {
 	}
 
 
-		
+
 	function user_confirm(res, i, num) {
 		if (confirm(`Do you want to upload your visit to ${res[i].name} with ${parseInt(num)} people?`)) {
 			var text = {};
@@ -167,8 +167,8 @@ window.onload = function() {
 			map.closePopup()
 		}
 	}
-	
-	
+
+
 	//Function to calculate distance between coordinates
 	function getDistance(lat1, lon1, lat2, lon2) {
 		var R = 6371; // Radius of the earth in km

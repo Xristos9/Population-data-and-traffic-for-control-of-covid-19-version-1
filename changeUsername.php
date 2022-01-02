@@ -12,12 +12,12 @@ if(isset($_SESSION['userID']) && isset($_SESSION['username'])){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!--include jquery - use ajax -->
 	<script src="changeUsername.js"></script>
-	<link rel="stylesheet" type="text/css" href="login.css"> 
+	<link rel="stylesheet" type="text/css" href="login.css">
 	<title>Change Username</title>
 </head>
 
 <body>
-	
+
 	<!-- Main div code -->
 	<div id="main">
 	<div class="h-tag">
