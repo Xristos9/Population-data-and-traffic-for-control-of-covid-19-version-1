@@ -72,7 +72,7 @@ window.onload = function() {
 		ajax.done(leandros)
 
 		function leandros(res){
-			for (let i = 0; i < res.length; i++) {
+			for (let i in res) {
 				if (getDistance(position.coords.latitude, position.coords.longitude, res[i].lat, res[i].lng) <= 200000) {
 
 					marker = L.marker([res[i].lat, res[i].lng]);
@@ -86,7 +86,7 @@ window.onload = function() {
 
 					container.on('click', '.submit', function(){
 						people = $('#people').val();
-						console.log(res[i])
+						// console.log(res[i])
 						user_confirm(res, i, people);
 					});
 
@@ -100,51 +100,46 @@ window.onload = function() {
 
 
 	function user_confirm(res, i, num) {
-		if (confirm(`Do you want to upload your visit to ${res[i].name} with ${parseInt(num)} people?`)) {
-
-			var text = {};
-			text.lat = res[i].lat;
-			text.lng = res[i].lng;
-			text.name = res[i].name;
-			text.address = res[i].address;
-			text.id = res[i].id;
-			text.estimate = parseInt(num);
-			console.log(text)
-			$.ajax({
-				url: 'visitBE.php',
-				method: 'POST',
-				data: {
-					key: text
-				},
-				success: function(data) {
-					console.log(data)
-					map.closePopup()
-				},error: function (xhr, exception) {
-					var msg = "";
-					if (xhr.status === 0) {
-						msg = "Not connect.\n Verify Network." + xhr.responseText;
-					} else if (xhr.status == 404) {
-						msg = "Requested page not found. [404]" + xhr.responseText;
-					} else if (xhr.status == 500) {
-						msg = "Internal Server Error [500]." +  xhr.responseText;
-					} else if (exception === "parsererror") {
-						msg = "Requested JSON parse failed.";
-					} else if (exception === "timeout") {
-						msg = "Time out error." + xhr.responseText;
-					} else if (exception === "abort") {
-						msg = "Ajax request aborted.";
-					} else {
-						msg = "Error:" + xhr.status + " " + xhr.responseText;
-					}
-					console.log(msg)
+		// console.log(i)
+		var text = {};
+		text.lat = res[i].lat;
+		text.lng = res[i].lng;
+		text.name = res[i].name;
+		text.address = res[i].address;
+		text.id = res[i].id;
+		text.estimate = parseInt(num);
+		console.log(text)
+		$.ajax({
+			url: 'visitBE.php',
+			method: 'POST',
+			data: {
+				key: text
+			},
+			success: function(data) {
+				console.log(data)
+				map.closePopup()
+			},error: function (xhr, exception) {
+				var msg = "";
+				if (xhr.status === 0) {
+					msg = "Not connect.\n Verify Network." + xhr.responseText;
+				} else if (xhr.status == 404) {
+					msg = "Requested page not found. [404]" + xhr.responseText;
+				} else if (xhr.status == 500) {
+					msg = "Internal Server Error [500]." +  xhr.responseText;
+				} else if (exception === "parsererror") {
+					msg = "Requested JSON parse failed.";
+				} else if (exception === "timeout") {
+					msg = "Time out error." + xhr.responseText;
+				} else if (exception === "abort") {
+					msg = "Ajax request aborted.";
+				} else {
+					msg = "Error:" + xhr.status + " " + xhr.responseText;
 				}
-			});
-			event.preventDefault()
+				console.log(msg)
+			}
+		});
+		event.preventDefault()
 
-		} else {
-			alert("Upload failed!")
-			map.closePopup()
-		}
 	}
 
 
