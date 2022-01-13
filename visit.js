@@ -40,7 +40,7 @@ window.onload = function() {
 		var ClLock = L.marker([position.coords.latitude, position.coords.longitude]);
 		ClLock.bindPopup("lat: " + position.coords.latitude + "<br>lng: " + position.coords.longitude);
 		stores.addLayer(ClLock);
-		// map.setView([position.coords.latitude, position.coords.longitude], 8)
+		map.setView([position.coords.latitude, position.coords.longitude], 15)
 
 		const ajax =  $.ajax({
 			url: 'visitSelect.php',

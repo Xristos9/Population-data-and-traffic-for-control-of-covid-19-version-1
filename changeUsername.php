@@ -52,7 +52,7 @@ if(isset($_SESSION['userID']) && isset($_SESSION['username'])){
 
 <?php
 } else{
-	header("Location: index.php");
+	header("Location: index.html");
 	exit();
 }
 ?>
