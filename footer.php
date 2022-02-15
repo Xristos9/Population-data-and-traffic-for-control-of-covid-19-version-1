@@ -12,10 +12,10 @@
 
 				<h4>Follow us on social media</h4>
 
-				<span><i class="fa fa-fw fa-facebook"></i></span>
-				<span><i class="fa fa-fw fa-instagram"></i></span>
-				<span><i class="fa fa-fw fa-twitter"></i></span>
-				<span><i class="fa fa-fw fa-youtube"></i></span>
+				<a href="https://www.youtube.com/watch?v=h3RNElMbdUY" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+				<a href="https://www.youtube.com/watch?v=h3RNElMbdUY" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+				<a href="https://www.youtube.com/watch?v=h3RNElMbdUY" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+				<a href="https://www.youtube.com/watch?v=h3RNElMbdUY" target="_blank"><i class="fa fa-fw fa-youtube"></i></a>
 			</div>
 		</div>
 
