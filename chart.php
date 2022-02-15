@@ -13,8 +13,12 @@
 <body>
 	<?php include "adminHeader.php"; ?>
 	<div class="page-wrapper">
-		<canvas id="myChart" width="50" height="50"></canvas>
-		<script src = 'chart.js'></script>
+		<div class="flex-container">
+			<div style="flex-grow: 1"><canvas id="myChart" width="100" height="100"></canvas></div>
+			<div style="flex-grow: 1"><canvas id="myChart2" width="100" height="100"></canvas></div>
+			<div style="flex-grow: 1"><canvas id="myChart3" width="100" height="100"></canvas></div>
+			<script src = 'chart.js'></script>
+		</div>
 	</div>
 	<?php include "footer.php";?>
 </body>

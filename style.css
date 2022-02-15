@@ -9,6 +9,19 @@ html, body{
 	min-height: 100%;
 }
 
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #E0E0E0;
+}
+
+.flex-container > div {
+	background-color: #E0E0E0;
+	width: 400px;
+	margin: 15px;
+	text-align: center;
+}
+
 h1 {
 	text-align: center;
 	color: #222020;
