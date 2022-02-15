@@ -31,7 +31,7 @@
 		<ul id="thelist"></ul>
 		<!-- <br><br><br> -->
 		<p id="text"></p>
-		<br><br>
+		<br>
 		<ul id="thelist2"></ul>
 	</div>
 
