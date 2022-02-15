@@ -41,7 +41,7 @@ window.onload = function() {
 			
 			completelist.innerHTML += "<br>";
 		}
-		document.getElementById("skata").innerHTML = "Your covid declaration dates:"
+		document.getElementById("text").innerHTML = "Your covid declaration dates:"
 
 		asyncCall()
 	}

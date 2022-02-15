@@ -30,7 +30,7 @@
 		<br>
 		<ul id="thelist"></ul>
 		<!-- <br><br><br> -->
-		<p id="skata"></p>
+		<p id="text"></p>
 		<br><br>
 		<ul id="thelist2"></ul>
 	</div>
