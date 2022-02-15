@@ -80,7 +80,7 @@ window.onload = function() {
 		function leadros2(res){
 			for(var i in res){
 				console.log(res[i])
-				completelist.innerHTML += "<li>Date: "+ res[i]+ "</li>";
+				completelist2.innerHTML += "<li>Date: "+ res[i]+ "</li>";
 			}
 		}
 	}
